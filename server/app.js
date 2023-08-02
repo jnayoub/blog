@@ -2,12 +2,14 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+const dotenv = require('dotenv').config();
+
 app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, '..', 'client')));
 app.use(express.json());
 
-app.listen(3000, () => {
-    console.log('Example app listening on port 3000!');
+app.listen(process.env.PORT, () => {
+    console.log('Example app listening on port ' + process.env.PORT);
 });
 
 app.get('/', (req, res) => {
