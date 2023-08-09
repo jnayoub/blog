@@ -17,11 +17,11 @@ app.use(express.json());
 
 
 const commentRouter = require('./routes/commentRouter');
-app.use('/Getcomments', commentRouter);
+app.use('/comments', commentRouter);
 app.get('/', (req, res) => {
 res.sendFile(path.join(__dirname, '..','client','pages','index.html'));
 });
 
 app.listen(process.env.PORT, () => {
-    console.log('Example app listening on port' + process.env.PORT);
+    console.log('Example app listening on port ' + process.env.PORT);
 });
